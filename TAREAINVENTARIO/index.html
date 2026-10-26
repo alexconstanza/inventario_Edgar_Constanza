@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Inventario</title>
+</head>
+
+<body>
+    <h1>Sistema de Gestión de Inventario</h1>
+    <button onclick="iniciarSistema()">Iniciar Inventario</button>
+
+    <script src="inventario.js"></script>
+    <script>
+        function iniciarSistema() {
+            let continuar = true;
+            while (continuar) {
+                let eleccion = mostrarMenu();
+                if (eleccion === null) break;
+
+                switch (eleccion.trim()) {
+                    case '1': agregarProducto(); break;
+                    case '2': verInventario(); break;
+                    case '3': actualizarCantidad(); break;
+                    case '4':
+                        continuar = false;
+                        alert('SALIENDO DEL PROGRAMA...');
+                        break;
+                    default: alert('OPCIÓN NO VÁLIDA.'); break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
